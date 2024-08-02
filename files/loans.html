@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/auth.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Contra Incendio</h2>
+        <ul>
+            <li><a href="inventory.html" id="inventoryLink">Inventario</a></li>
+            <li><a href="loans.html" id="loansLink">Préstamos</a></li>
+            <li><a href="staff.html" id="personnelLink">Personal</a></li>
+            <li><a href="index.html" id="logoutLink">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Préstamos</h2>
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="loanItem">Equipo/Utilería:</label>
+                <input type="text" id="loanItem" name="loanItem" required>
+            </div>
+            <div class="form-group">
+                <label for="loanStaff">Nombre del Personal:</label>
+                <input type="text" id="loanStaff" name="loanStaff" required>
+            </div>
+            <div class="form-group">
+                <label for="loanDate">Fecha del Préstamo:</label>
+                <input type="date" id="loanDate" name="loanDate" required>
+            </div>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <h3>Lista de Préstamos</h3>
+        <ul id="loanList"></ul>
+    </div>
+    <script type="module" src="loans.js"></script>
+</body>
+
+</html>

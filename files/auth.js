@@ -10,12 +10,13 @@ btnLogin.addEventListener('click', async () => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         console.log('Usuario Autenticado', userCredential.user);
-        window.location.href = 'dashboard.html';
+
+        // Redirigir al dashboard con el correo como parámetro en la URL
+        window.location.href = `dashboard.html?email=${encodeURIComponent(email)}`;
     } catch (error) {
         showAlert('¡Ups!', 'Correo o contraseña incorrectos. Intentalo de nuevo', 'error');
     }
 });
-
 
 const showPassword = document.getElementById('showPassword');
 showPassword.addEventListener('change', function () {

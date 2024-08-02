@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="inventory.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 id="sidebarTitle">Inventario</h2>
+        <ul>
+            <li><a href="dashboard.html" id="dashboardLink">Dashboard</a></li>
+            <li><a href="inventory.html" id="inventoryLink">Inventario</a></li>
+            <li><a href="loans.html" id="loansLink">Préstamos</a></li>
+            <li><a href="staff.html" id="personnelLink">Personal</a></li>
+            <li><a href="index.html" id="logoutLink">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    
+
+    <div class="main-content">
+        <h2 id="principalTitle">Principal</h2>
+        <button id="addNewItem" onclick="location.href='addInventory.html'">Agregar Nuevo Equipo/Utilería</button>
+        <input type="text" id="searchItem" placeholder="Buscar...">
+        <div class="filters">
+            <label for="classificationFilter">Clasificación:</label>
+            <select id="classificationFilter">
+                <option value="">Todas</option>
+            </select>
+
+            <label for="locationFilter">Ubicación:</label>
+            <select id="locationFilter">
+                <option value="">Todas</option>
+            </select>
+
+            <label for="brandFilter">Marca:</label>
+            <select id="brandFilter">
+                <option value="">Todas</option>
+            </select>
+
+            <label for="statusFilter">Estado:</label>
+            <select id="statusFilter">
+                <option value="">Todos</option>
+            </select>
+        </div>
+        <h3>Lista de Equipos y Utilería</h3>
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Clasificación</th>
+                    <th>Capacidad</th>
+                    <th>Ubicación</th>
+                    <th>Marca</th>
+                    <th>Fecha de Vencimiento</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="inventory.js"></script>
+</body>
+
+</html>
