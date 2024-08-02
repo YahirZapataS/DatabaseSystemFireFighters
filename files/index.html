@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio de Sesión</title>
-  <link rel="stylesheet" href="Styles/styles.css">
+  <link rel="stylesheet" href="loginStyle.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="auth.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <script type="module" src="JavaScript/auth.js"></script>
 </head>
+
 <body>
   <div class="container">
     <h2>Inicio de Sesión</h2>
@@ -17,10 +19,18 @@
         <input type="email" id="email" required placeholder="Correo Electrónico...">
       </div>
       <div class="formGroup">
-        <input type="password" id="password" required placeholder="Contraseña...">
+        <div class="passwordWrapper">
+          <input type="password" id="password" required placeholder="Contraseña...">
+        </div>
+        <div class="formGroup">
+          <input type="checkbox" id="showPassword">
+          <label for="showPassword">Mostrar contraseña</label>
+        </div>
       </div>
-      <button type="submit">Iniciar Sesión</button>
+      <button type="button" id="btnLogin">Iniciar Sesión</button>
     </form>
+    <button type="button" id="btnRegister">Registrarme</button>
   </div>
 </body>
+
 </html>

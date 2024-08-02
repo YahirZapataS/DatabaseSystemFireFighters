@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="signupStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="formGroup">
+            <h2>Registro</h2>
+            <input type="email" id="email" placeholder="Correo Electrónico...">
+            <input type="text" id="name" placeholder="Nombre(s)">
+            <input type="text" id="lastname" placeholder="Apellidos">
+            <input type="text" id="position" placeholder="Cargo o Posición">
+            <input type="password" id="password" placeholder="Contraseña...">
+            <div id="passwordStrength" class="strength"></div>
+            <input type="password" id="confirmPassword" placeholder="Repite la Contraseña...">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Mostrar contraseña</label>
+            <button type="submit" id="btnSignup">Registrar</button>
+        </form>
+        <button type="button" id="btnCancel">Cancelar</button>
+    </div>
+    <script type="module" src="signup.js"></script>
+</body>
+
+</html>
