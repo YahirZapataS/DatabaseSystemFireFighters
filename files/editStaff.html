@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Empleado</title>
+    <link rel="stylesheet" href="addStaffStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2></h2>
+        <ul>
+            <li><a href="inventory.html">Inventario</a></li>
+            <li><a href="loans.html">Préstamos</a></li>
+            <li><a href="staff.html">Personal</a></li>
+            <li><a href="index.html">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>Editar Empleado</h2>
+        <form id="editStaffForm">
+            <input type="hidden" id="staffId">
+            <div class="form-group">
+                <label for="staffName">Nombre</label>
+                <input type="text" id="staffName">
+            </div>
+            <div class="form-group">
+                <label for="staffPosition">Posición</label>
+                <input type="text" id="staffPosition">
+            </div>
+            <div class="form-group">
+                <label for="staffEmail">Email</label>
+                <input type="email" id="staffEmail">
+            </div>
+            <div class="form-group">
+                <label for="staffPhone">Teléfono</label>
+                <input type="text" id="staffPhone">
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+    <script type="module" src="editStaff.js"></script>
+</body>
+</html>

@@ -66,7 +66,7 @@ function addItemToTable(id, item) {
     row.innerHTML = `
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td>${item.count}</td>
+        <td>${item.quantity}</td>
         <td>${item.classification}</td>
         <td>${item.capacity}</td>
         <td>${item.location}</td>
