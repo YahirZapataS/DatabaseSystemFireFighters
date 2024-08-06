@@ -1,4 +1,4 @@
-import { getDocs, doc, updateDoc, collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { getDocs, doc, updateDoc, collection, query, orderBy } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { db } from './firebaseConfig.js';
 
 const loansTableBody = document.getElementById('loansTable').querySelector('tbody');
@@ -8,15 +8,23 @@ statusFilter.addEventListener('change', fetchLoans);
 
 async function fetchLoans() {
     const status = statusFilter.value;
-    const loansSnapshot = await getDocs(collection(db, 'loans'));
-    loansTableBody.innerHTML = '';
 
-    loansSnapshot.forEach((doc) => {
-        const loan = doc.data();
-        if (status === 'Todos' || loan.status === status) {
-            addLoanToTable(doc.id, loan);
-        }
-    });
+    try {
+        // Consulta para obtener los préstamos ordenados por ID
+        const loansQuery = query(collection(db, 'loans'), orderBy('id'));
+        const loansSnapshot = await getDocs(loansQuery);
+        
+        loansTableBody.innerHTML = '';
+
+        loansSnapshot.forEach((doc) => {
+            const loan = doc.data();
+            if (status === 'Todos' || loan.status === status) {
+                addLoanToTable(doc.id, loan);
+            }
+        });
+    } catch (error) {
+        console.error('Error fetching loans:', error);
+    }
 }
 
 function addLoanToTable(id, loan) {
